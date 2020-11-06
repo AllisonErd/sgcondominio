@@ -9,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import br.com.gna.sgcondominio.entities.types.UsuarioType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -42,6 +41,6 @@ public class UsuarioEntity implements Serializable {
 	private String senha;
 
 	@Column(name = "usu_tipo", nullable = false)
-	private UsuarioType tipoUsuario;
+	private Integer tipoUsuario;
 
 }
