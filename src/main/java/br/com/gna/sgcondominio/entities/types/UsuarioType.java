@@ -14,9 +14,15 @@ public enum UsuarioType {
 	private final Integer codigo;
 	private final String descricao;
 
-	public UsuarioType valueOfCodigo(final Integer codigo) {
-		return Arrays.stream(UsuarioType.values()).filter(s -> s.getCodigo().equals(codigo)).findAny()
-				.orElseThrow(() -> new RuntimeException("Valor não encontrado para UsuarioType: " + codigo));
+	public static UsuarioType valueOfCodigo(final Integer codigo) {
+		return Arrays.stream(UsuarioType.values()).filter(s -> s.getCodigo().equals(codigo)).findFirst()
+				.orElse(null);
 	}
 
+	
+	@Override
+	public String toString() {
+		return this.codigo + " - " + this.descricao;
+	}
+	
 }
