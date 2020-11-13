@@ -11,14 +11,12 @@ import br.com.gna.sgcondominio.feature.usuario.cadastro.model.CadastroUsuarioVie
 public class CadastroUsuarioConverter {
 
 	public UsuarioEntity toUsuarioEntity(CadastroUsuarioForm form) {
-		System.out.println(UsuarioType.values());
 		return UsuarioEntity.builder()
 				.nome(form.getNomeUsuario())
 				.email(form.getEmail())
 				.senha(form.getSenha())
 				.tipoUsuario(Integer.parseInt(form.getTipoUsuario()))
 				.build();
-				
 	}
 	
 	public CadastroUsuarioView toCadastroUsuarioView(UsuarioEntity entity) {

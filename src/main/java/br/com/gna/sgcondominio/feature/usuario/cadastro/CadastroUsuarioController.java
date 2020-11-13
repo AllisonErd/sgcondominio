@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.gna.sgcondominio.feature.usuario.cadastro.model.CadastroUsuarioForm;
+import br.com.gna.sgcondominio.feature.usuario.cadastro.model.CadastroUsuarioView;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -19,7 +20,7 @@ public class CadastroUsuarioController {
 	private final CadastroUsuarioService service;
 
 	@PostMapping
-	public ResponseEntity<?> postCadastroUsuario(@RequestBody @Valid CadastroUsuarioForm form) {
+	public ResponseEntity<CadastroUsuarioView> postCadastroUsuario(@RequestBody @Valid CadastroUsuarioForm form) {
 		return ResponseEntity.ok(service.postCadastroUsuario(form));
 	}
 
