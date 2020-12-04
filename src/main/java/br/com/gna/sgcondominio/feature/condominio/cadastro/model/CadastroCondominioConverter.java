@@ -1,10 +1,9 @@
 package br.com.gna.sgcondominio.feature.condominio.cadastro.model;
 
 import br.com.gna.sgcondominio.entities.CondominioEntity;
+import org.springframework.stereotype.Component;
 
-import javax.persistence.Convert;
-
-@Convert
+@Component
 public class CadastroCondominioConverter {
 
     public CondominioEntity toCondominioEntity(CadastroCondominioForm form){
