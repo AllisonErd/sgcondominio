@@ -36,29 +36,29 @@ public class CondominioEntity implements Serializable {
 	@Column(name = "cond_nome", nullable = false, length = 50)
 	private String nome;
 
-	@Column(name = "cond_telefone")
+	@Column(name = "cond_telefone", length = 11)
 	private String telefone;
 
-	@Column(name = "cond", nullable = false, length = 8)
+	@Column(name = "cond_cep", nullable = false, length = 8)
 	private String cep;
 
-	@Column(name = "cond_rua")
+	@Column(name = "cond_rua", length = 50)
 	private String rua;
 
-	@Column(name = "cond_numero")
+	@Column(name = "cond_numero", length = 5)
 	private String numero;
 
-	@Column(name = "cond_bairro")
+	@Column(name = "cond_bairro", length = 30)
 	private String bairro;
 
-	@Column(name = "cond_complemento")
+	@Column(name = "cond_complemento", length = 30)
 	private String complemento;
 
-	@Column(name = "cond_cidade")
+	@Column(name = "cond_cidade", length = 50)
 	private String cidade;
 
-	@Column(name = "cond_estado")
-	private String estado;
+	@Column(name = "cond_uf", length = 2)
+	private String uf;
 
 	@OneToMany(mappedBy = "idImovel")
 	private List<ImovelEntity> imoveis;
