@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -25,35 +26,35 @@ public class CadastroDespesaForm implements Serializable {
     @JsonProperty("nome")
     @NotBlank(message = "Campo obrigatório")
     @Size(max = 30, message = "O valor informado excede o limite de 30 caracteres.")
-    public String nome;
+    private String nome;
 
     @JsonProperty("descricao")
     @NotBlank(message = "Campo obrigatório")
     @Size(max = 100, message = "O valor informado excede o limite de 100 caracteres.")
-    public String descricao;
+    private String descricao;
 
+    @Valid
     @DecimalMax(value = "1000.0", message = "Valor informado deve ser menor ou igual a R$1.000,00")
-    @DecimalMin("0.0")
-    @NotNull(message = "Campo obrigatório")
+    @Min(value = 0, message = "Campo obrigatório")
     @JsonProperty("valor_despesa")
-    public BigDecimal valorDespesa;
+    private BigDecimal valorDespesa;
 
     @JsonFormat(pattern = "dd-MM-yyyy", timezone = "America/Recife")
     @JsonProperty("data_vencimento")
-    public LocalDate vencimento;
+    private LocalDate vencimento;
 
     @JsonFormat(pattern = "dd-MM-yyyy", timezone = "America/Recife")
     @JsonProperty("data_pagamento")
-    public LocalDate dapaPagamento;
+    private LocalDate dapaPagamento;
 
     @JsonProperty("status")
     @Valid
     @Pattern(regexp = RegexUtil.VALIDA_STATUS_DESPESA, message = "O valor informado deve ser 1 ou 2")
     @NotNull(message = "Campo obrigatório")
-    public String status;
+    private String status;
 
     @JsonProperty("id_imovel")
     @NotNull(message = "Campo obrigatório")
-    public Integer imovel;
+    private Integer imovel;
 
 }

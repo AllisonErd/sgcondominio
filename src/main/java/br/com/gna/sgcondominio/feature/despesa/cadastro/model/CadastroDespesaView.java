@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Data
 @Builder
@@ -17,8 +18,20 @@ public class CadastroDespesaView implements Serializable {
     private static final long serialVersionUID = 3666010514965097413L;
 
     @JsonProperty("id_despesa")
-    public Integer idDespesa;
+    private Integer idDespesa;
 
     @JsonProperty("nome_despesa")
-    public String nomeDespesa;
+    private String nomeDespesa;
+
+    @JsonProperty("descricao")
+    private String descricao;
+
+    @JsonProperty("valor_despesa")
+    private BigDecimal valorDespesa;
+
+    @JsonProperty("data_vencimento")
+    private String dataVencimento;
+
+    @JsonProperty("status")
+    private Integer status;
 }

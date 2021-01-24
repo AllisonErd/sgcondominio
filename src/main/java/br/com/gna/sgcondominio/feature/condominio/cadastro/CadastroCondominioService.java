@@ -1,7 +1,6 @@
 package br.com.gna.sgcondominio.feature.condominio.cadastro;
 
 import br.com.gna.sgcondominio.entities.CondominioEntity;
-import br.com.gna.sgcondominio.feature.condominio.cadastro.model.CadastroCondominioConverter;
 import br.com.gna.sgcondominio.feature.condominio.cadastro.model.CadastroCondominioForm;
 import br.com.gna.sgcondominio.feature.condominio.cadastro.model.CadastroCondominioView;
 import br.com.gna.sgcondominio.repository.CondominioRepository;

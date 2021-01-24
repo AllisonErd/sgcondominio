@@ -44,7 +44,7 @@ public class DespesaEntity implements Serializable{
 	@Column(name = "des_descricao", nullable = false, length = 100)
 	private String descricao;
 	
-	@Column(name = "des_valor", nullable = false, precision = 2)
+	@Column(name = "des_valor", nullable = false, scale = 2)
 	private BigDecimal valorDespesa;
 	
 	@Column(name = "des_data")
@@ -52,15 +52,13 @@ public class DespesaEntity implements Serializable{
 	private LocalDate dataDespesa;
 	
 	@Column(name = "des_vencimento", nullable = false)
-	@CreationTimestamp
 	private LocalDate dataVencimento;
 	
 	@Column(name = "des_pagamento")
-	@CreationTimestamp
 	private LocalDate dataPagamento;
 	
 	@Column(name = "des_status", nullable = false)
-	private StatusDespesaType status;
+	private Integer status;
 	
 	@ManyToOne
 	@JoinColumn(name = "des_imv_id", nullable = false)

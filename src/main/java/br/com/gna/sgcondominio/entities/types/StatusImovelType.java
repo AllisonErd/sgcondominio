@@ -14,8 +14,8 @@ public enum StatusImovelType {
 	private final Integer codigo;
 	private final String descricao;
 
-	public StatusImovelType valueOfCodigo(final Integer codigo) {
-		return Arrays.stream(StatusImovelType.values()).filter(s -> s.getCodigo().equals(codigo)).findAny()
+	public static StatusImovelType valueOfCodigo(final Integer codigo) {
+		return Arrays.stream(StatusImovelType.values()).filter(s -> s.getCodigo().equals(codigo)).findFirst()
 				.orElseThrow(() -> new RuntimeException("Valor não encontrado para StatusImovelType: " + codigo));
 	}
 

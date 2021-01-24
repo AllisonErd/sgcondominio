@@ -7,4 +7,7 @@ public final class RegexUtil {
 	public static final String VALIDA_SOMENTE_NUMEROS = "|^[0-9]+$";
 
 	public static final String VALIDA_STATUS_DESPESA = "|^[1-2]+$";
+
+	public static final String VALIDA_STATUS_IMOVEL = "|^[1-3]+$";
+
 }

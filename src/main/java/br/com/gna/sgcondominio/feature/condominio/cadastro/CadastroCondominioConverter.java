@@ -1,6 +1,8 @@
-package br.com.gna.sgcondominio.feature.condominio.cadastro.model;
+package br.com.gna.sgcondominio.feature.condominio.cadastro;
 
 import br.com.gna.sgcondominio.entities.CondominioEntity;
+import br.com.gna.sgcondominio.feature.condominio.cadastro.model.CadastroCondominioForm;
+import br.com.gna.sgcondominio.feature.condominio.cadastro.model.CadastroCondominioView;
 import org.springframework.stereotype.Component;
 
 @Component

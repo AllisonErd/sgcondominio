@@ -15,6 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import br.com.gna.sgcondominio.entities.types.StatusImovelType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -37,24 +38,27 @@ public class ImovelEntity implements Serializable{
 	@Column(name = "imv_id", nullable = false, unique = true, updatable = false)
 	private Integer idImovel;
 	
-	@Column(name = "imv_numero")
+	@Column(name = "imv_numero", nullable = false)
 	private String numero;
 	
 	@Column(name = "imv_vagas_garagem")
 	private String numeroVagasGaragem;
 	
-	@Column(name = "imv_num_quartos")
+	@Column(name = "imv_num_quartos", nullable = false)
 	private String numeroQuartos;
 	
-	@Column(name = "imv_obs")
+	@Column(name = "imv_obs", length = 300)
 	private String observacao;
-	
+
+	@Column(name = "imv_status", nullable = false)
+	private Integer status;
+
 	@ManyToOne
-	@JoinColumn(name = "imv_prop_id")
+	@JoinColumn(name = "imv_prop_id", nullable = false)
 	private ProprietarioEntity proprietario;
 	
 	@OneToOne
-	@JoinColumn(name = "imv_cond_id")
+	@JoinColumn(name = "imv_cond_id", nullable = false)
 	private CondominioEntity condominio;
 	
 	@OneToMany(mappedBy = "idDespesa", fetch = FetchType.EAGER)
